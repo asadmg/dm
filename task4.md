@@ -38,7 +38,7 @@ Use AWS Backup service to set up the following for the DB instance:
 - set automated backup snapshots' retention period to 35 days
 - select option for copying the snapshots to a different region
 
->Go into the "automated backups" section on RDS and ensure that cross region replication is enabled for the DB instance. This is to ensure logs will be available alongside the snapshots for point-in-time restores in the other region.
+>Go into the "automated backups" section on RDS and ensure that cross region replication is enabled for the DB instance. This is to ensure DB transaction logs will be available alongside the snapshots for point-in-time restores in the other region.
 
 >The plan above is simplistic and does not take into account legal requirements around data being exported out of a region.
 
@@ -46,9 +46,9 @@ Use AWS Backup service to set up the following for the DB instance:
 
 If there is an incident, we should be able to very quickly restore into an instance from to a point-in-time within the snapshot retention period, potentially to an Recovery Point Objective (RPO) of 5 mins.
 
-Depending on the size of data, the Recovery Time Objective (RTO) could be within an hour, although as mentioned above in the introduction this would need testing.
+Depending on the size of data, a Recovery Time Objective (RTO) one hour is achievable, although as mentioned above in the introduction this would need testing.
 
-If the main AWS host region is compromised, the restore can be done on the backup region, and the traffic will need to be routed accordingly until the main region is back online.
+If the main AWS host region is compromised, the restore can be done in the backup region, and traffic will need to be routed accordingly until the main region is back online.
 
 ### Caveats
 
