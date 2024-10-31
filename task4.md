@@ -46,7 +46,7 @@ Use AWS Backup service to set up the following for the DB instance:
 
 If there is an incident, we should be able to very quickly restore into an instance from to a point-in-time within the snapshot retention period, potentially to an Recovery Point Objective (RPO) of 5 mins.
 
-Depending on the size of data, a Recovery Time Objective (RTO) one hour is achievable, although as mentioned above in the introduction this would need testing.
+Depending on the size of data, a Recovery Time Objective (RTO) of one hour is achievable, although as mentioned above in the introduction this would need testing.
 
 If the main AWS host region is compromised, the restore can be done in the backup region, and traffic will need to be routed accordingly until the main region is back online.
 
